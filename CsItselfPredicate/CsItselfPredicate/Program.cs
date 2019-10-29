@@ -6,15 +6,8 @@ namespace CsItselfPredicate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
-            Predicate<int> IsBoilingPoint = delegate(int temperature) { return temperature == 100;};
-
-            Predicate<int> isEven = IsEven;
-
-            Console.WriteLine($"Число 15 - четное: {IsEven(15)}");
-            Console.WriteLine($"Число 16 - четное: {IsEven(16)}");
-
+            #region Boiling Point
+            Predicate<int> IsBoilingPoint = delegate (int temperature) { return temperature == 100; };
             int waterTemperature = 100;
 
             if (IsBoilingPoint(waterTemperature))
@@ -25,6 +18,13 @@ namespace CsItselfPredicate
             {
                 Console.WriteLine("We need some more energy to create steam!");
             }
+            #endregion
+
+            #region Number Is Even
+            Predicate<int> isEven = IsEven;
+            Console.WriteLine($"Число 15 - четное: {IsEven(15)}");
+            Console.WriteLine($"Число 16 - четное: {IsEven(16)}");
+            #endregion
 
         }
 
